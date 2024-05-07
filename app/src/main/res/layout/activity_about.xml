@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FB8484"
+    android:backgroundTint="#FB5F5F"
+    tools:context=".about">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/goback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded"
+            android:text="Regresar"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            android:drawableLeft="@mipmap/back"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light"
+            android:text="Datos del Ciclo Menstrual"
+            android:padding="16dp"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FDB0B0"
+            android:background="@drawable/rounded"
+            android:text="¿Qué es?"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFE2E2"
+            android:text="El ciclo menstrual es el proceso que experimenta una mujer cada mes en el que su cuerpo se prepara para un posible embarazo. Incluye cambios en el útero y los ovarios, así como la liberación de un óvulo y la preparación del revestimiento uterino para la implantación. Si no hay embarazo, el revestimiento uterino se desprende durante la menstruación."
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FDB0B0"
+            android:background="@drawable/rounded"
+            android:text="Situaciones comunes durante el ciclo menstrual"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFE2E2"
+            android:text="Durante el ciclo menstrual, pueden ocurrir varias situaciones, como cambios en el estado de ánimo, cambios en los niveles de energía, sensibilidad en los senos, dolores abdominales o en la parte baja de la espalda, así como la presencia de calambres durante la menstruación. Además, pueden haber variaciones en la duración y el flujo menstrual, así como síntomas premenstruales como irritabilidad, hinchazón y cambios en el apetito."
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FDB0B0"
+            android:background="@drawable/rounded"
+            android:text="¿Qué usar durante mi ciclo menstrual?"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFE2E2"
+            android:text="Toallas sanitarias: Disponibles en una variedad de tamaños y niveles de absorción, se adhieren a la ropa interior para absorber el flujo menstrual.  Tampones: Insertados en la vagina para absorber el flujo menstrual. Vienen en diferentes tamaños y niveles de absorción.  Copa menstrual: Un dispositivo de silicona flexible que se inserta en la vagina para recolectar el flujo menstrual. Se puede reutilizar durante varios años."
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FDB0B0"
+            android:background="@drawable/rounded"
+            android:text="Conexión con la naturaleza"
+            android:padding="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFE2E2"
+            android:text="La menstruación está intrínsecamente ligada al ciclo lunar y a los ciclos naturales de la Tierra. Reconocer y honrar este ciclo menstrual puede ayudar a las mujeres a sentirse más conectadas con la naturaleza y con su propio cuerpo."
+            android:padding="16dp"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

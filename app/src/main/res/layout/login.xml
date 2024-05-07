@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF91CE"
+    tools:context=".LoginUser">
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="313dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="33dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/apPaterno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="312dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/baloo_da"
+        android:text="Registro"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:shadowColor="#000000" />
+
+    <EditText
+        android:id="@+id/edad"
+        android:layout_width="311dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="31dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Edad"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apMaterno" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="313dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="33dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Correo Electrónico"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/contraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edad" />
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_width="317dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="33dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Constraseña"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
+        android:id="@+id/apPaterno"
+        android:layout_width="313dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Apellido Paterno"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/apMaterno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <EditText
+        android:id="@+id/apMaterno"
+        android:layout_width="312dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:ems="10"
+        android:fontFamily="@font/baloo_da"
+        android:hint="Apellido Materno"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#74002AFF"
+        app:layout_constraintBottom_toTopOf="@+id/edad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apPaterno" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="51dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="171dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="215dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/baloo_da"
+        android:text="Permites que compartamos tu información para ayudar a otras usuarias "
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="154dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="129dp"
+        android:layout_marginBottom="32dp"
+        android:background="#5436FF"
+        android:fontFamily="@font/baloo_da"
+        android:text="Siguiente"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
