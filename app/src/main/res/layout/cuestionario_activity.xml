@@ -167,17 +167,6 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:padding="10dp"
-            android:text="@string/score"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            android:visibility="invisible" />
-
 
         <ProgressBar
             android:id="@+id/progress_bar"
@@ -185,9 +174,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:backgroundTint="#ffa384"
-            android:indeterminate="false"
-            tools:visibility="invisible">
+
+            android:padding="35dp"
+
+            android:backgroundTint="#CC65F8"
+
+            android:indeterminate="false">
 
         </ProgressBar>
 

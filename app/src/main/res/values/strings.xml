@@ -1,38 +1,93 @@
 <resources>
     <string name="app_name">Monstruacion</string>
-    <string name="score">Score 0/8</string>
-    <string name="question_number">0/5 Preguntas</string>
+    <string name="welcome">¡Bienvenido a Monstruación!</string>
+    <string name="score">Score 0/11</string>
+    <string name="question_number">0/11 Preguntas</string>
+
     <string name="question_1">¿Cuanto dura tu periodo?</string>
     <string name="question1_A">1 a 3 días</string>
     <string name="question1_B">3 a 7 días</string>
-    <string name="question1_C">NFC</string>
+    <string name="question1_C">"Otro"</string>
     <string name="question1_D">VoIP</string>
     <string name="answer_1">VoIP</string>
+
+
     <string name="question_2">¿Experimentas síntomas premestruales?</string>
     <string name="question_2A">Si</string>
     <string name="question_2B">No</string>
-    <string name="question_2C">PHP</string>
+    <string name="question_2C">"Otro"</string>
     <string name="question_2D">Java</string>
     <string name="answer_2">Java</string>
+
+
     <string name="question_3"> ¿Sigues algún tratamiento médico que afecte tu ciclo?</string>
     <string name="question_3A"> Si</string>
     <string name="question_3B">No</string>
-    <string name="question_3C">Downloading</string>
+    <string name="question_3C">"Otro"</string>
     <string name="question_3D">Digitizing</string>
     <string name="answer_3">Digitizing</string>
+
     <string name="question_4">¿Tu ciclo menstrual es regular o irregular?</string>
     <string name="question_4A">Regular</string>
     <string name="question_4B">Irregular</string>
-    <string name="question_4C">40 Megabytes</string>
+    <string name="question_4C">"Otro"</string>
     <string name="question_4D">40 Zetabytes</string>
     <string name="answer_4">2.7 Zetabytes</string>
+
     <string name="question_5">¿Cuanto dura tu ciclo menstrual?</string>
     <string name="question_5A"> De 25 a 30 días</string>
     <string name="question_5B">De 21 a 35 días</string>
-    <string name="question_5C">MP3</string>
+    <string name="question_5C">"Otro"</string>
     <string name="question_5D">ZIP</string>
     <string name="answer_5">JPEG</string>
+
+
+    <string name="question_6">¿Cual es la intensidad de tus sintomas premenstuales?</string>
+    <string name="question_6A"> Leves</string>
+    <string name="question_6B">Moderados</string>
+    <string name="question_6C">Intensos</string>
+    <string name="question_6D">ZIP</string>
+    <string name="answer_6">JPEG</string>
+
+    <string name="question_7">¿Realizas ejercicio con frecuencia?</string>
+    <string name="question_7A"> Si</string>
+    <string name="question_7B">No</string>
+    <string name="question_7C">Otro</string>
+    <string name="question_7D">ZIP</string>
+    <string name="answer_7">JPEG</string>
+
+    <string name="question_8">¿Tomas medicamento para el dolor menstrual?</string>
+    <string name="question_8A"> Si</string>
+    <string name="question_8B">No</string>
+    <string name="question_8C">Otro</string>
+    <string name="question_8D">ZIP</string>
+    <string name="answer_8">JPEG</string>
+
+    <string name="question_9">¿Como calificarias la intensidad de tus periodos menstruales?</string>
+    <string name="question_9A"> Leves</string>
+    <string name="question_9B">Moderados</string>
+    <string name="question_9C">Intensos</string>
+    <string name="question_9D">ZIP</string>
+    <string name="answer_9">JPEG</string>
+
+    <string name="question_10">¿Que sintomas premenstruales experimentas?</string>
+    <string name="question_10A">Sintomas fisicos(colicos,fatiga,ansiedad,etc)</string>
+    <string name="question_10B">Sintomas emocionales(irritabilidad,tristeza,ansiedad,etc)</string>
+    <string name="question_10C">Sintomas fiosicos y emocionales</string>
+    <string name="question_10D">ZIP</string>
+    <string name="answer_10">JPEG</string>
+
+    <string name="question_11">¿Cuando fue la ultima vez que te bajo?</string>
+    <string name="question_11A">Sintomas fisicos(colicos,fatiga,ansiedad,etc)</string>
+    <string name="question_11B">Sintomas emocionales(irritabilidad,tristeza,ansiedad,etc)</string>
+    <string name="question_11C">Sintomas fiosicos y emocionales</string>
+    <string name="question_11D">ZIP</string>
+    <string name="answer_11">JPEG</string>
     <string name="selctedoption">SelctedOption</string>
     <string name="correctanswer">CorrectAnswer</string>
-    <string name="date">Seleccionar una fecha </string>
+    <string name="date">Seleccione la ultima vez que tuviste tu periodo</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="email">Correo electrónico</string>
+    <string name="registros">Ver tus registros</string>
+
 </resources>
