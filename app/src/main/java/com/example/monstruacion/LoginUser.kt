@@ -5,12 +5,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class LoginUser : AppCompatActivity() {
+class LoginUser : UserData() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
@@ -23,6 +26,8 @@ class LoginUser : AppCompatActivity() {
         val boton1 = findViewById<Button>(R.id.button)
 
         boton1.setOnClickListener{
+
+            lifecycleScope.launch(Dispatchers.IO) {  }
              Registros(nombre1.text.toString(), appaterno.text.toString(), apmaterno.text.toString(), edad, correo.text.toString(), contraseña.text.toString())
         }
 
@@ -32,12 +37,17 @@ class LoginUser : AppCompatActivity() {
         val URL = "http://192.168.0.20/registro.php"
         val queue = Volley.newRequestQueue(this)
 
-        val r = object :  StringRequest(Request.Method.POST,URL, Response.Listener<String> { response ->
+        val r = object :  StringRequest(Method.POST,URL, Response.Listener { response ->
             Toast.makeText(this,response, Toast.LENGTH_SHORT).show()
+
+            lifecycleScope.launch(Dispatchers.IO) {
+                storeValues(nombre1, correo)
+            }
+
             startActivity(Intent(this, Cuestionario::class.java))
 
         }, Response.ErrorListener { error ->
-            Toast.makeText(this,"No jalo p. atte Andres $error", Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Error: $error", Toast.LENGTH_LONG).show()
         })
         {
             override fun getParams(): MutableMap<String, String>? {

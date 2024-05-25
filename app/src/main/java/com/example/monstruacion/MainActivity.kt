@@ -2,18 +2,22 @@ package com.example.monstruacion
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : UserData() {
     var  txtfecha: EditText?=null
-    var  btnfecha: ImageButton?=null
     var  dpFecha: DatePicker?=null
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +27,32 @@ class MainActivity : AppCompatActivity() {
 
         dpFecha=findViewById(R.id.dpFecha)
         val goabout = findViewById<Button>(R.id.goabout)
+        val saludo = findViewById<TextView>(R.id.nombreUsuario)
+
+
+        lifecycleScope.launch(Dispatchers.IO){
+            getUser().collect {
+                Log.d("DataStore", "Store name: ${it.name}")
+                withContext(Dispatchers.Main){
+
+                    if (it.name.isNotEmpty()) {
+                        saludo.text = "Bienvenida, ${it.name}"
+
+
+                    } else {
+                        if ((it.name.isNotEmpty())){
+                            saludo.text = "Bienvenida, ${it.name}"
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+
+
 
         txtfecha?.setText(geFechaDatePicker())
 
