@@ -7,27 +7,32 @@
     android:background="#F3EAEA"
     tools:context=".MainActivity">
 
-    <DatePicker
-        android:id="@+id/dpFecha"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
-
-        android:headerBackground="#FF91CE"
-        android:datePickerMode="calendar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
-        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="0dp"
-        android:background="@color/pink"
-        app:layout_constraintTop_toBottomOf="@id/dpFecha"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_weight="1">
+        app:layout_constraintTop_toTopOf="parent">
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/dpFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mcv_selectionColor="#D180CD"
+        app:mcv_showOtherDates="all"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="0dp"
+        android:background="@color/pink"
+        android:layout_weight="1">
 
 
 
@@ -54,12 +59,14 @@
                     android:textColor="@color/light"
                     android:fontFamily="@font/abeezee"
 
+                    android:layout_margin="5dp"
+
                     android:textAlignment="center"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/registros"/>
             </LinearLayout>
 
@@ -93,21 +100,23 @@
                 android:padding="16dp"
                 android:text="La menstruación está intrínsecamente ligada al ciclo lunar y a los ciclos naturales de la Tierra. Reconocer y honrar este ciclo menstrual puede ayudar a las mujeres a sentirse más conectadas con la naturaleza y con su propio cuerpo."
                 android:textSize="14sp"
-                android:elevation="5dp"/>
+                android:elevation="3dp"/>
 
                 <Button
                     android:id="@+id/goabout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
-                    android:layout_marginLeft="12dp"
                     android:background="@drawable/button_rounded"
                     android:text="Ver más"
                     android:textColor="#FFFFFF"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:elevation="10dp"/>
 
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

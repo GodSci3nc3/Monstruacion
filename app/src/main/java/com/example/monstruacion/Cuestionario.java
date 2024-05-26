@@ -133,7 +133,7 @@ public class Cuestionario extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
-            }, error -> Toast.makeText(getApplicationContext(), "No jalo p. atte Andres " + error, Toast.LENGTH_LONG).show()) {
+            }, error -> Toast.makeText(getApplicationContext(), "Ha habido un error  " + error, Toast.LENGTH_LONG).show()) {
                 @Override
                 protected Map<String, String> getParams() {
                     Map<String, String> parameters = new HashMap<>();

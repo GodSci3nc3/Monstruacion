@@ -59,4 +59,7 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Calendario de lectura
+    implementation ("com.github.prolificinteractive:material-calendarview:2.0.1")
 }

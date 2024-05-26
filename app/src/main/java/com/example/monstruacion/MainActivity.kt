@@ -1,17 +1,24 @@
 package com.example.monstruacion
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.Window
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
+import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -25,7 +32,17 @@ class MainActivity : UserData() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        dpFecha=findViewById(R.id.dpFecha)
+
+        val calendarView = findViewById<MaterialCalendarView>(R.id.dpFecha)
+        val sombreadoRango = ContextCompat.getDrawable(this, R.color.pink)
+
+        val fechaInicio = CalendarDay.from(2024, 5, 15)
+        val fechaFin = CalendarDay.from(2024, 5, 20)
+
+        calendarView.addDecorator(RangeDecorator(sombreadoRango!!, fechaInicio, fechaFin))
+
+
+
         val goabout = findViewById<Button>(R.id.goabout)
         val saludo = findViewById<TextView>(R.id.nombreUsuario)
 
@@ -54,13 +71,9 @@ class MainActivity : UserData() {
 
 
 
-        txtfecha?.setText(geFechaDatePicker())
+        txtfecha?.setText(getFechaDatePicker(dpFecha))
 
-        dpFecha?.setOnDateChangedListener{
-           dpFecha,año,mes,dia->
-            txtfecha?.setText(geFechaDatePicker())
-            dpFecha?.visibility=View.GONE
-        }
+
 
         goabout.setOnClickListener { goabout() }
 
@@ -73,12 +86,7 @@ datePicker?.setOnDateChangedListener{ datePicker, year, month, dayOfMonth ->
 */
     }
 
-    fun geFechaDatePicker():String{
-        var dia=dpFecha?.dayOfMonth.toString().padStart(2,'0')
-        var mes=(dpFecha!!.month+1).toString().padStart(2,'0')
-        var año=dpFecha?.year.toString().padStart(4,'0')
-        return dia+"/"+mes+"/"+año
-    }
+
 
     fun muestraCalendario(view: View){
         dpFecha?.visibility=View.VISIBLE
@@ -87,5 +95,8 @@ datePicker?.setOnDateChangedListener{ datePicker, year, month, dayOfMonth ->
     fun goabout() {
         startActivity(Intent(this@MainActivity, about::class.java))
     }
+
+
+
 
 }
