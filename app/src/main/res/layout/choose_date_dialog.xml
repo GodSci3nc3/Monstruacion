@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="360dp"
-    android:layout_height="670dp"
+    android:layout_width="370dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardBackgroundColor="@color/pinkcake"
     app:cardCornerRadius="5dp"
@@ -45,6 +45,23 @@
             android:background="@drawable/date_calendar_background"
             android:datePickerMode="calendar" />
 
+
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="15dp"
+
+
+            android:background="@drawable/button_rounded"
+            android:elevation="10dp"
+            android:fontFamily="@font/abeezee"
+            android:text="@string/conti"
+
+            android:textColor="#FFFFFF"
+
+            android:textSize="25sp" />
     </LinearLayout>
 
 

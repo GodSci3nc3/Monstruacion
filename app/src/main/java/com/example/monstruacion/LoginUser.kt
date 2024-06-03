@@ -41,7 +41,8 @@ class LoginUser : UserData() {
             Toast.makeText(this,response, Toast.LENGTH_SHORT).show()
 
             lifecycleScope.launch(Dispatchers.IO) {
-                storeValues(nombre1, correo)
+                // Insertar los datos en la base de datos. Excepto el último periodo porque aún no se ha calculado, se envía un nulo
+                storeValues(nombre1, correo, null.toString())
             }
 
             startActivity(Intent(this, Cuestionario::class.java))

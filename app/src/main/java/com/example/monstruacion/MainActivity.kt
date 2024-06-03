@@ -1,18 +1,12 @@
 package com.example.monstruacion
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.Window
 import android.widget.Button
 import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
@@ -24,23 +18,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : UserData() {
-    var  txtfecha: EditText?=null
     var  dpFecha: DatePicker?=null
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme (R.style.Base_Theme_Monstruacion)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        val calendarView = findViewById<MaterialCalendarView>(R.id.dpFecha)
-        val sombreadoRango = ContextCompat.getDrawable(this, R.color.pink)
-
-        val fechaInicio = CalendarDay.from(2024, 5, 15)
-        val fechaFin = CalendarDay.from(2024, 5, 20)
-
-        calendarView.addDecorator(RangeDecorator(sombreadoRango!!, fechaInicio, fechaFin))
-
 
 
         val goabout = findViewById<Button>(R.id.goabout)
@@ -56,11 +39,24 @@ class MainActivity : UserData() {
                         saludo.text = "Bienvenida, ${it.name}"
 
 
-                    } else {
-                        if ((it.name.isNotEmpty())){
-                            saludo.text = "Bienvenida, ${it.name}"
+                    }
+                    if (it.lastperiod.isNotEmpty()) {
 
-                        }
+                        val calendarView = findViewById<MaterialCalendarView>(R.id.dpFecha)
+                        val sombreado = ContextCompat.getDrawable(this@MainActivity, R.color.pink)
+
+
+                        val lastPeriodDate = it.lastperiod.split(",")
+                        val year = lastPeriodDate[0].toInt()
+                        val month = lastPeriodDate[1].toInt()
+                        val day = lastPeriodDate[2].toInt()
+
+                        val fecharesaltada = CalendarDay.from(year, month, day)
+
+                        calendarView.addDecorator(EventDecorator(sombreado!!, listOf(fecharesaltada)))
+
+                    } else {
+                        welcomeChooseDate()
                     }
 
 
@@ -70,8 +66,6 @@ class MainActivity : UserData() {
 
 
 
-
-        txtfecha?.setText(getFechaDatePicker(dpFecha))
 
 
 

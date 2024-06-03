@@ -86,8 +86,13 @@
     <string name="selctedoption">SelctedOption</string>
     <string name="correctanswer">CorrectAnswer</string>
     <string name="date">Seleccione la ultima vez que tuviste tu periodo</string>
+    <string name="simb_lastperiod">Último periodo</string>
+    <string name="simb_nextperiod">Predicción del siguiente periodo</string>
+    <string name="simb_ovulation">Ovulación</string>
     <string name="username">Nombre de usuario</string>
     <string name="email">Correo electrónico</string>
     <string name="registros">Ver tus registros</string>
+    <string name="conti">Continuar</string>
+
 
 </resources>
