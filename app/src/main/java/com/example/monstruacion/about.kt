@@ -22,10 +22,8 @@ class about : AppCompatActivity() {
             insets
         }
 
-        backbtn.setOnClickListener { goMain() }
+        backbtn.setOnClickListener { finish() }
     }
 
-    fun goMain () {
-        startActivity(Intent(this@about, MainActivity::class.java))
-    }
+
 }

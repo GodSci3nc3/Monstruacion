@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
 
         app:mcv_selectionColor="#D180CD"
-        app:mcv_showOtherDates="all"
+        app:mcv_showOtherDates="none"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,10 +50,13 @@
                 android:textAlignment="center"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/newPeriod"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:layout_margin="5dp"
-                android:text="@string/registros"/>
+
+                android:text="Periodo nuevo"/>
         </LinearLayout>
 
     <ScrollView
@@ -77,22 +80,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_margin="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
                 <View
                     android:layout_width="30dp"
                     android:layout_height="30dp"
 
-                    android:layout_margin="20dp"
-                    android:background="@color/pink"/>
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ranges_calendar_background"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,18 +103,14 @@
 
                     android:layout_gravity="center"
                     android:text="@string/simb_lastperiod"/>
-            </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+
                     <View
                         android:layout_width="30dp"
                         android:layout_height="30dp"
 
-                        android:layout_margin="20dp"
-                        android:background="@color/purple"/>
+                        android:layout_margin="10dp"
+                        android:background="@drawable/prediction_background"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -119,30 +118,39 @@
 
                         android:layout_gravity="center"
                         android:text="@string/simb_nextperiod"/>
-                </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
                     <View
                         android:layout_width="30dp"
                         android:layout_height="30dp"
 
-                        android:layout_margin="20dp"
-                        android:background="@color/pinktwo"/>
+                        android:layout_margin="10dp"
+                        android:background="@drawable/period_range_background"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:layout_gravity="center"
-                        android:text="@string/simb_ovulation"/>
-                </LinearLayout>
+                        android:text="@string/simb_period"/>
+
+
+                <View
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+
+                    android:layout_margin="10dp"
+                    android:background="@drawable/ovulation_range_background"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center"
+                    android:text="@string/simb_ovulation"/>
 
             </LinearLayout>
 
-
+                </HorizontalScrollView>
 
 
             <LinearLayout
@@ -190,6 +198,21 @@
 
             </LinearLayout>
             </LinearLayout>
+
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+
+                android:layout_margin="10dp"
+
+                android:background="@drawable/button_rounded"
+
+
+                android:text="Cerrar sesión"
+                android:textSize="20sp"/>
         </LinearLayout>
     </ScrollView>
 

@@ -4,7 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pinkcake">#EA899A</color>
     <color name="light">#F4E5E5</color>
-    <color name="pink">#FF91CE</color>
-    <color name="purple">#8822ED</color>
-    <color name="pinktwo">#D922ED</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9E65D6</color>
+    <color name="pinktwo">#E8DEDE</color>
+    <color name="pinkthree">#E3D7D7</color>
 </resources>

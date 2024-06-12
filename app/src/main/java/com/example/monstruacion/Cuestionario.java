@@ -1,14 +1,14 @@
 package com.example.monstruacion;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Cuestionario extends AppCompatActivity {
 
     private TextView optionA, optionB, optionC, optionD;
@@ -27,6 +28,8 @@ public class Cuestionario extends AppCompatActivity {
     int currentIndex;
     int mscore = 0;
     int qn = 0;
+    String nombre;
+    private UserDataJavaWrapper userDataJavaWrapper;
     ProgressBar progressBar;
     ArrayList<String> userResponses = new ArrayList<>();
 
@@ -53,6 +56,11 @@ public class Cuestionario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cuestionario_activity);
+
+        nombre = getIntent().getStringExtra("nombre");
+
+        userDataJavaWrapper = new UserDataJavaWrapper(new UserData());
+
 
         optionA = findViewById(R.id.optionA);
         optionB = findViewById(R.id.optionB);
@@ -107,7 +115,7 @@ public class Cuestionario extends AppCompatActivity {
         String m = chechkout1.getText().toString().trim();
         String n = checkout2.getText().toString().trim();
 
-        // Agregar la respuesta del usuario al vector
+
         userResponses.add(m);
 
         if (m.equals(n)) {
@@ -120,9 +128,10 @@ public class Cuestionario extends AppCompatActivity {
         currentIndex = (currentIndex + 1) % questionBank.length;
 
         if (currentIndex == 0) {
-            String URL = "http://192.168.0.20/information.php";
+            String URL = "http://192.168.43.236/information.php";
             RequestQueue queue = Volley.newRequestQueue(this);
 
+            //Se almacenan las respuestas del usuario en un objeto StringBuilder
             StringBuilder userResponsesParam = new StringBuilder();
             for (int i = 0; i < userResponses.size(); i++) {
                 userResponsesParam.append("respuesta").append(i + 1).append("=").append(userResponses.get(i)).append("&");
@@ -131,13 +140,23 @@ public class Cuestionario extends AppCompatActivity {
             StringRequest postRequest = new StringRequest(Request.Method.POST, URL, response -> {
                 // Manejar la respuesta del servidor
                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+
+
+                String data = "duracion_p";
+                Log.d("Debugging", userResponses.get(4));
+                userDataJavaWrapper.callChangeMyPeriodInformation("duracion_p", userResponses.get(4));
+
+
+
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
             }, error -> Toast.makeText(getApplicationContext(), "Ha habido un error  " + error, Toast.LENGTH_LONG).show()) {
                 @Override
                 protected Map<String, String> getParams() {
+                    // Se envían las respuestas y el nombre del usuario para identificar qué respuestas dió quien
                     Map<String, String> parameters = new HashMap<>();
                     parameters.put("respuestas", userResponsesParam.toString());
+                    parameters.put("nombreUsuario", nombre);
                     return parameters;
                 }
             };
